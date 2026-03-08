@@ -1,4 +1,4 @@
-<img width="1365" height="538" alt="image" src="https://github.com/user-attachments/assets/84857a14-97de-4c2b-aece-e99d30865e21" /># MovieDB — Aglet Interactive Interview Brief
+MovieDB — Aglet Interactive Interview Brief
 
 > A full-stack movie discovery and collection app powered by The Movie Database (TMDB) API.
 > Built with **Node.js + Express + MongoDB + EJS**
@@ -203,10 +203,20 @@ TMDB returns 20 movies per page. The brief requires 9 per page across 45 movies 
 ### Caching
 A 5-minute in-memory cache wraps all TMDB calls to avoid hitting rate limits during testing. 
 
-<img width="1365" height="673" alt="Screenshot 2026-03-08 173958" src="https://github.com/user-attachments/assets/f370b6cc-58e9-4f2e-9f9d-b3954423427d" />
-<img width="1365" height="609" alt="Screenshot 2026-03-08 173932" src="https://github.com/user-attachments/assets/82c04c62-f0ec-443a-9a80-e6435fc19137" />
-<img width="1318" height="670" alt="Screenshot 2026-03-08 173849" src="https://github.com/user-attachments/assets/1c3597df-f611-4ab6-b6a3-d7e20ab5363b" />
-<img width="1357" height="684" alt="Screenshot 2026-03-08 173830" src="https://github.com/user-attachments/assets/8353b59b-ee57-432b-8c4c-638ef98fb444" />
+### Home Page   <img width="1357" height="684" alt="Home" src="https://github.com/user-attachments/assets/58ffa380-81f7-4a13-9d92-c4edd32a66e8" />
+
+### Movie List
+<img width="1325" height="565" alt="Movies List" src="https://github.com/user-attachments/assets/60e8c799-fa28-47fa-9b2e-bc193b5a405c" />
+<img width="1318" height="670" alt="Movie List" src="https://github.com/user-attachments/assets/e28fe53e-637e-48b1-a13d-91a60b201edc" />
+
+### Sign In
+<img width="746" height="542" alt="Sign In" src="https://github.com/user-attachments/assets/d02dd7ff-dc6e-4333-8d69-f106dbb109dd" />
+
+### Contact
+<img width="1365" height="673" alt="Contact Me" src="https://github.com/user-attachments/assets/537012f2-03b6-43ae-b549-be7bc296ed06" />
+
+
+
 
 
 
