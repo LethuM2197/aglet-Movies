@@ -80,7 +80,7 @@ SESSION_SECRET=aglet_super_secret_key_2024
 TMDB_API_KEY=your_tmdb_api_key_here
 TMDB_BASE_URL=https://api.themoviedb.org/3
 TMDB_IMAGE_BASE=https://image.tmdb.org/t/p/w500
-```
+
 > Replace `your_tmdb_api_key_here` with your actual TMDB API key
 
 ### 4. Start MongoDB
@@ -215,6 +215,7 @@ Responsive design improvements
 
 ### Contact
 <img width="1365" height="673" alt="Contact Me" src="https://github.com/user-attachments/assets/537012f2-03b6-43ae-b549-be7bc296ed06" />
+
 
 
 
