@@ -1,9 +1,3 @@
-/* ============================================================
-   MOVIEDB — MAIN STYLESHEET
-   Cinematic dark theme · BEM naming · CSS custom properties
-   ============================================================ */
-
-/* --- CUSTOM PROPERTIES --- */
 :root {
   --bg:           #0a0a0f;
   --bg-card:      #111118;
@@ -50,9 +44,7 @@ ul     { list-style: none; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--text-3); border-radius: 3px; }
 
-/* ============================================================
-   NAVIGATION
-   ============================================================ */
+
 .nav {
   position:      fixed;
   top: 0; left: 0; right: 0;
@@ -176,9 +168,7 @@ ul     { list-style: none; }
   transition:    all 0.3s;
 }
 
-/* ============================================================
-   MAIN & FOOTER
-   ============================================================ */
+
 .main   { flex: 1; padding-top: 64px; }
 .footer {
   border-top: 1px solid var(--border);
@@ -195,9 +185,7 @@ ul     { list-style: none; }
 .footer__credit a       { color: var(--accent); }
 .footer__credit a:hover { text-decoration: underline; }
 
-/* ============================================================
-   PAGE HERO
-   ============================================================ */
+
 .page-hero {
   padding:   80px 40px 56px;
   border-bottom: 1px solid var(--border);
@@ -220,9 +208,7 @@ ul     { list-style: none; }
 .page-hero__title em { font-style: italic; color: var(--accent); font-family: var(--font-serif); }
 .page-hero__sub     { font-size: 15px; color: var(--text-2); }
 
-/* ============================================================
-   MOVIES SECTION & GRID
-   ============================================================ */
+
 .movies-section {
   max-width: 1200px;
   margin:    0 auto;
@@ -234,9 +220,7 @@ ul     { list-style: none; }
   gap:                   28px;
 }
 
-/* ============================================================
-   MOVIE CARD
-   ============================================================ */
+
 .movie-card {
   background:    var(--bg-card);
   border:        1px solid var(--border);
@@ -336,9 +320,7 @@ ul     { list-style: none; }
 .movie-card__fav-btn--guest { font-size: 12px; color: var(--text-3); }
 .movie-card__fav-btn--guest:hover { color: var(--text-2); border-color: var(--text-3); }
 
-/* ============================================================
-   PAGINATION
-   ============================================================ */
+
 .pagination {
   display:         flex;
   align-items:     center;
@@ -371,9 +353,7 @@ ul     { list-style: none; }
 }
 .pagination__btn:hover { color: var(--text-1); border-color: var(--text-3); }
 
-/* ============================================================
-   AUTH PAGE
-   ============================================================ */
+
 .auth-page {
   min-height:      calc(100vh - 64px);
   display:         flex;
@@ -409,9 +389,7 @@ ul     { list-style: none; }
 .auth-card__footer { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-3); text-align: center; }
 .auth-card__footer strong { color: var(--text-2); }
 
-/* ============================================================
-   FORMS
-   ============================================================ */
+
 .form-group  { display: flex; flex-direction: column; gap: 6px; }
 .form-label  { font-size: 13px; font-weight: 500; color: var(--text-2); }
 .form-input  {
@@ -429,9 +407,7 @@ ul     { list-style: none; }
 .form-input::placeholder { color: var(--text-3); }
 .form-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
 
-/* ============================================================
-   BUTTONS
-   ============================================================ */
+
 .btn {
   display:         inline-flex;
   align-items:     center;
@@ -450,9 +426,7 @@ ul     { list-style: none; }
 .btn--primary:hover { opacity: 0.9; transform: translateY(-1px); }
 .btn--full          { width: 100%; }
 
-/* ============================================================
-   CONTACT PAGE
-   ============================================================ */
+
 .contact-section { max-width: 1000px; margin: 0 auto; padding: 56px 40px 80px; }
 .contact-grid {
   display:               grid;
@@ -507,25 +481,19 @@ ul     { list-style: none; }
 .contact-list__item a       { color: var(--text-2); transition: color var(--transition); }
 .contact-list__item a:hover { color: var(--accent); }
 
-/* ============================================================
-   EMPTY STATE
-   ============================================================ */
+
 .empty-state        { text-align: center; padding: 100px 40px; }
 .empty-state__icon  { font-size: 64px; color: var(--text-3); margin-bottom: 24px; }
 .empty-state__title { font-family: var(--font-display); font-size: 36px; letter-spacing: 2px; margin-bottom: 12px; }
 .empty-state__sub   { font-size: 15px; color: var(--text-2); margin-bottom: 32px; }
 
-/* ============================================================
-   ERROR PAGE
-   ============================================================ */
+
 .error-page        { min-height: calc(100vh - 64px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; }
 .error-page__code  { font-family: var(--font-display); font-size: 120px; letter-spacing: 8px; color: var(--accent); line-height: 1; margin-bottom: 16px; }
 .error-page__title { font-family: var(--font-display); font-size: 40px; letter-spacing: 3px; margin-bottom: 12px; }
 .error-page__sub   { font-size: 15px; color: var(--text-2); margin-bottom: 32px; }
 
-/* ============================================================
-   MODAL
-   ============================================================ */
+
 .modal {
   position:  fixed;
   inset:     0;
@@ -590,9 +558,7 @@ ul     { list-style: none; }
 .modal__badge--accent { background: var(--accent-dim); border-color: rgba(245,197,24,0.3); color: var(--accent); }
 .modal__overview     { font-size: 14px; color: var(--text-2); line-height: 1.7; }
 
-/* ============================================================
-   TOAST
-   ============================================================ */
+
 .toast {
   position:   fixed;
   bottom: 32px; right: 32px;
@@ -614,18 +580,14 @@ ul     { list-style: none; }
 .toast.is-success { border-color: rgba(92,224,160,0.4); color: var(--green); }
 .toast.is-error   { border-color: rgba(224,92,92,0.4);  color: var(--red);   }
 
-/* ============================================================
-   RESPONSIVE — TABLET
-   ============================================================ */
+
 @media (max-width: 1024px) {
   .movies-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .nav         { padding: 0 24px; }
   .movies-section { padding: 40px 24px 60px; }
 }
 
-/* ============================================================
-   RESPONSIVE — MOBILE
-   ============================================================ */
+
 @media (max-width: 768px) {
   .nav__search { display: none; }
 
@@ -654,9 +616,7 @@ ul     { list-style: none; }
   .footer__inner { flex-direction: column; gap: 8px; text-align: center; }
 }
 
-/* ============================================================
-   RESPONSIVE — SMALL MOBILE
-   ============================================================ */
+
 @media (max-width: 480px) {
   .movies-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
   .movies-section { padding: 32px 20px 60px; }
