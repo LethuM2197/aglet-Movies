@@ -1,23 +1,5 @@
 ### Aglet Movies – Movie Browser Application
-Overview
-
-Aglet Movies is a full-stack movie browsing application that integrates with the The Movie Database API to display movie data.
-
-The application allows users to:
-
-Browse movies in a paginated interface
-
-View movie posters, titles, and release dates
-
-Add movies to a favourites list
-
-Log in with a default user account
-
-View saved favourite movies
-
-Access a contact page with developer details
-
-This project was developed as part of the Aglet Interactive Backend / Full Stack Developer Assessment.
+A full-stack movie browsing application integrating with the The Movie Database API (TMDB)
 
 ### Technologies Used
 Backend
@@ -52,7 +34,8 @@ MongoDB Atlas
 
 ### Default Login Credentials
 
-Use the following account to test the favourites functionality:
+ Use the following account to test the favourites functionality:
+
 Username: jointheteam
 Email: jointheteam@aglet.co.za
 Password: @TeamAglet
@@ -232,6 +215,7 @@ Responsive design improvements
 
 ### Contact
 <img width="1365" height="673" alt="Contact Me" src="https://github.com/user-attachments/assets/537012f2-03b6-43ae-b549-be7bc296ed06" />
+
 
 
 
