@@ -80,59 +80,27 @@ Open your browser at: **http://localhost:3000**
 
 
 
-## Folder Structure
-```
 aglet-Movies/
+│
 ├── server.js
 ├── package.json
 ├── .env.example
 ├── .gitignore
 ├── README.md
+│
 ├── db-dump/
 │   ├── users.json
 │   └── favourites.json
+│
 ├── backend/
 │   ├── config/
 │   │   ├── db.js
 │   │   ├── tmdb.js
 │   │   └── seed.js
+│   │
 │   ├── models/
 │   │   ├── User.js
-│   │   └── Favourite.js
-│   ├── middleware/
-│   │   └── auth.js
-│   ├── controllers/
-│   │   ├── movieController.js
-│   │   ├── authController.js
-│   │   └── favouriteController.js
-│   └── routes/
-│       ├── movieRoutes.js
-│       ├── authRoutes.js
-│       ├── favouriteRoutes.js
-│       └── contactRoutes.js
-└── frontend/
-    ├── views/
-    │   ├── layout.ejs
-    │   ├── contact.ejs
-    │   ├── 404.ejs
-    │   ├── error.ejs
-    │   ├── movies/
-    │   │   └── index.ejs
-    │   ├── favourites/
-    │   │   └── index.ejs
-    │   └── auth/
-    │       ├── login.ejs
-    │       └── signup.ejs
-    └── public/
-        ├── css/
-        │   └── main.css
-        └── js/
-            └── main.js
-```
-
-
-
-
+│
 
 
 
@@ -150,6 +118,7 @@ aglet-Movies/
 
 ### Contact
 <img width="1365" height="673" alt="Contact Me" src="https://github.com/user-attachments/assets/537012f2-03b6-43ae-b549-be7bc296ed06" />
+
 
 
 
