@@ -24,20 +24,6 @@ MovieDB — Aglet Interactive Interview Brief
 - 👤 Default test user pre-seeded
 
 
-
-## 🛠 Tech Stack
-
-| Layer | Technology | Reason |
-|---|---|---|
-| Runtime | Node.js | Fast, non-blocking I/O — ideal for API-heavy apps |
-| Framework | Express.js | Minimal, flexible, battle-tested |
-| Database | MongoDB + Mongoose | Schema flexibility for movie/user data |
-| Templating | EJS + express-ejs-layouts | Server-side rendering, no build step needed |
-| Auth | express-session + bcryptjs | Secure sessions with hashed passwords |
-| API Caching | node-cache | Reduces TMDB API calls with 5-minute cache |
-| Styling | CSS with BEM naming | Custom properties, responsive grid |
-
-
 ## ⚙️ Setup Instructions
 
 ### Prerequisites
@@ -94,7 +80,7 @@ Open your browser at: **http://localhost:3000**
 
 
 
-## 🗺 Folder Structure
+## Folder Structure
 ```
 aglet-Movies/
 ├── server.js
@@ -144,64 +130,6 @@ aglet-Movies/
             └── main.js
 ```
 
----
-
-## 🔑 API Routes
-
-| Method | Route | Auth | Description |
-|---|---|---|---|
-| GET | `/` | No | Movie listing (paginated) |
-| GET | `/api/search?q=` | No | Search autocomplete |
-| GET | `/api/movie/:id` | No | Movie detail |
-| GET | `/auth/login` | No | Login page |
-| POST | `/auth/login` | No | Authenticate user |
-| GET | `/auth/signup` | No | Signup page |
-| POST | `/auth/signup` | No | Register new user |
-| GET | `/auth/logout` | Yes | Destroy session |
-| GET | `/favourites` | Yes | Favourites list |
-| POST | `/favourites/add` | Yes | Add a favourite |
-| DELETE | `/favourites/remove/:id` | Yes | Remove a favourite |
-| GET | `/contact` | No | Contact page |
-
-
-## 🗄 Database Dump
-
-A `db-dump/` folder is included with the seeded database.
-
-To restore manually:
-
-node -e "
-require('dotenv').config();
-const mongoose = require('mongoose');
-const fs = require('fs');
-mongoose.connect(process.env.MONGO_URI).then(async () => {
-  const User = require('./backend/models/User');
-  const users = JSON.parse(fs.readFileSync('./db-dump/users.json'));
-  await User.insertMany(users);
-  console.log('Database restored!');
-  process.exit();
-});
-"
-
-
-
-
-##  Rationale & Approach
-
-### Why Node.js + Express?
-Node.js is the most natural fit for an API-heavy app — async I/O is first-class. Express is lightweight with minimal boilerplate.
-
-### Why MongoDB?
-The brief listed MongoDB explicitly. Storing favourites as `{ userId, movieId, title, poster }` is a perfect document model — no JOINs needed.
-
-### Why EJS?
-No build step — the assessor can clone and run immediately with `npm start`. EJS is readable and close to plain HTML.
-
-### TMDB Pagination Strategy
-TMDB returns 20 movies per page. The brief requires 9 per page across 45 movies (5 pages). Each app page maps to a slice of TMDB results, fetching a second TMDB page when the 9-movie window spans a boundary.
-
-### Caching
-A 5-minute in-memory cache wraps all TMDB calls to avoid hitting rate limits during testing. 
 
 ### Home Page   <img width="1357" height="684" alt="Home" src="https://github.com/user-attachments/assets/58ffa380-81f7-4a13-9d92-c4edd32a66e8" />
 
@@ -214,6 +142,7 @@ A 5-minute in-memory cache wraps all TMDB calls to avoid hitting rate limits dur
 
 ### Contact
 <img width="1365" height="673" alt="Contact Me" src="https://github.com/user-attachments/assets/537012f2-03b6-43ae-b549-be7bc296ed06" />
+
 
 
 
