@@ -131,6 +131,14 @@ aglet-Movies/
 ```
 
 
+
+
+
+
+
+
+
+
 ### Home Page   <img width="1357" height="684" alt="Home" src="https://github.com/user-attachments/assets/58ffa380-81f7-4a13-9d92-c4edd32a66e8" />
 
 ### Movie List
@@ -142,6 +150,7 @@ aglet-Movies/
 
 ### Contact
 <img width="1365" height="673" alt="Contact Me" src="https://github.com/user-attachments/assets/537012f2-03b6-43ae-b549-be7bc296ed06" />
+
 
 
 
