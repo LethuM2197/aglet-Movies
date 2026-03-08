@@ -1,17 +1,61 @@
-MovieDB — Aglet Interactive Interview Brief
+### Aglet Movies – Movie Browser Application
+Overview
 
-> A full-stack movie discovery and collection app powered by The Movie Database (TMDB) API.
-> Built with **Node.js + Express + MongoDB + EJS**
+Aglet Movies is a full-stack movie browsing application that integrates with the The Movie Database API to display movie data.
 
+The application allows users to:
 
-##  Live Demo
+Browse movies in a paginated interface
 
-- **Repo:** https://github.com/LethuM2197/aglet-Movies
-- **Test Login:**
-  - Username: `jointheteam`
-  - Email: `jointheteam@aglet.co.za`
-  - Password: `@TeamAglet`
+View movie posters, titles, and release dates
 
+Add movies to a favourites list
+
+Log in with a default user account
+
+View saved favourite movies
+
+Access a contact page with developer details
+
+This project was developed as part of the Aglet Interactive Backend / Full Stack Developer Assessment.
+
+### Technologies Used
+Backend
+
+Node.js
+
+Express.js
+
+MongoDB
+
+Mongoose
+
+Frontend
+
+HTML5
+
+CSS3
+
+JavaScript
+
+External APIs
+
+The Movie Database API
+
+Development Tools
+
+Git
+
+GitHub
+
+MongoDB Atlas
+
+### Default Login Credentials
+
+Use the following account to test the favourites functionality:
+Username: jointheteam
+Email: jointheteam@aglet.co.za
+Password: @TeamAglet
 
 ##  Features
 
@@ -72,78 +116,108 @@ This creates the test user:
 - Email: `jointheteam@aglet.co.za`
 - Password: `@TeamAglet`
 
-### 6. Start the server
+### Project Structure
 
-npm run dev
-
-Open your browser at: **http://localhost:3000**
-
-
-
-### Structure
-
-aglet-Movies/
+aglet-movies/
+│
+├── backend/
+│   ├── models
+│   ├── routes
+│   ├── controllers
+│
+├── frontend/
+│   ├── css
+│   ├── js
+│   ├── images
+│
+├── db-dump/
+│   └── moviedb_aglet.json
 │
 ├── server.js
 ├── package.json
-├── .env.example
-├── .gitignore
-├── README.md
-│
-├── db-dump/
-│   ├── users.json
-│   └── favourites.json
-│
-├── backend/
-│   ├── config/
-│   │   ├── db.js
-│   │   ├── tmdb.js
-│   │   └── seed.js
-│   │
-│   ├── models/
-│   │   ├── User.js
-│   │   └── Favourite.js
-│   │
-│   ├── middleware/
-│   │   └── auth.js
-│   │
-│   ├── controllers/
-│   │   ├── movieController.js
-│   │   ├── authController.js
-│   │   └── favouriteController.js
-│   │
-│   └── routes/
-│       ├── movieRoutes.js
-│       ├── authRoutes.js
-│       ├── favouriteRoutes.js
-│       └── contactRoutes.js
-│
-└── frontend/
-    ├── views/
-    │   ├── layout.ejs
-    │   ├── contact.ejs
-    │   ├── 404.ejs
-    │   ├── error.ejs
-    │   │
-    │   ├── movies/
-    │   │   └── index.ejs
-    │   │
-    │   ├── favourites/
-    │   │   └── index.ejs
-    │   │
-    │   └── auth/
-    │       ├── login.ejs
-    │       └── signup.ejs
-    │
-    └── public/
-        ├── css/
-        │   └── main.css
-        │
-        └── js/
-            └── main.js
+└── README.md
 
 
+### Installation Guide
+1. Clone the Repository
+git clone https://github.com/LethuM2197/aglet-Movies.git
 
+### Navigate into the project folder:
+cd aglet-Movies
+
+
+### Install Dependencies
+npm install
+
+### Environment Variables
+
+Create a .env file in the root directory.
+
+Example configuration:
+
+PORT=3000
+NODE_ENV=development
+
+MONGO_URI=your_mongodb_connection_string
+
+SESSION_SECRET=aglet_super_secret_key
+
+TMDB_API_KEY=your_tmdb_api_key
+TMDB_BASE_URL=https://api.themoviedb.org/3
+TMDB_IMAGE_BASE=https://image.tmdb.org/t/p/w500
+
+### Run the Application
+
+Start the server:
+
+npm start
+
+The application will run at:
+
+http://localhost:3000
+
+Database Setup
+
+This project uses MongoDB Atlas.
+
+### A database dump is included in the repository under:
+
+/db-dump
+
+You can import it using:
+
+mongorestore
+
+Or manually import it into MongoDB.
+
+
+### Development Approach
+
+The project was built using Node.js and Express for the backend due to its simplicity, scalability, and strong ecosystem for building APIs.
+
+MongoDB was selected as the database because:
+
+It integrates well with JavaScript applications
+
+It provides flexible document structures
+
+It works well with cloud services like MongoDB Atlas
+
+The frontend was designed to remain simple and functional while focusing on the backend architecture and API integration.
+
+Future Improvements (Brownie Points)
+
+Possible enhancements include:
+
+Movie search functionality
+
+Autocomplete search suggestions
+
+Movie detail popup modal
+
+Improved UI styling
+
+Responsive design improvements
 
 
 
@@ -158,6 +232,7 @@ aglet-Movies/
 
 ### Contact
 <img width="1365" height="673" alt="Contact Me" src="https://github.com/user-attachments/assets/537012f2-03b6-43ae-b549-be7bc296ed06" />
+
 
 
 
