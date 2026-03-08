@@ -1,9 +1,8 @@
-# 🎬 MovieDB — Aglet Interactive Interview Brief
+<img width="1365" height="538" alt="image" src="https://github.com/user-attachments/assets/84857a14-97de-4c2b-aece-e99d30865e21" /># MovieDB — Aglet Interactive Interview Brief
 
 > A full-stack movie discovery and collection app powered by The Movie Database (TMDB) API.
 > Built with **Node.js + Express + MongoDB + EJS**
 
----
 
 ##  Live Demo
 
@@ -13,7 +12,6 @@
   - Email: `jointheteam@aglet.co.za`
   - Password: `@TeamAglet`
 
----
 
 ##  Features
 
@@ -25,7 +23,7 @@
 - 📱 Fully responsive — mobile → tablet → desktop
 - 👤 Default test user pre-seeded
 
----
+
 
 ## 🛠 Tech Stack
 
@@ -39,7 +37,6 @@
 | API Caching | node-cache | Reduces TMDB API calls with 5-minute cache |
 | Styling | CSS with BEM naming | Custom properties, responsive grid |
 
----
 
 ## ⚙️ Setup Instructions
 
@@ -48,7 +45,6 @@
 - MongoDB running locally OR MongoDB Atlas account
 - TMDB API Key — [Get one free here](https://www.themoviedb.org/settings/api)
 
----
 
 ### 1. Clone the repository
 ```
@@ -57,13 +53,13 @@ cd aglet-Movies
 ```
 
 ### 2. Install dependencies
-```
+
 npm install
-```
+
 
 ### 3. Create your .env file
 Create a file called `.env` in the root folder and add:
-```
+
 PORT=3000
 NODE_ENV=development
 MONGO_URI=mongodb://localhost:27017/moviedb_aglet
@@ -76,27 +72,27 @@ TMDB_IMAGE_BASE=https://image.tmdb.org/t/p/w500
 
 ### 4. Start MongoDB
 If running locally, open a separate terminal and run:
-```
+
 mongod
-```
+
 Or use MongoDB Atlas and paste your Atlas connection string as `MONGO_URI`
 
 ### 5. Seed the default user
-```
+
 npm run seed
-```
+
 This creates the test user:
 - Username: `jointheteam`
 - Email: `jointheteam@aglet.co.za`
 - Password: `@TeamAglet`
 
 ### 6. Start the server
-```
+
 npm run dev
-```
+
 Open your browser at: **http://localhost:3000**
 
----
+
 
 ## 🗺 Folder Structure
 ```
@@ -205,7 +201,12 @@ No build step — the assessor can clone and run immediately with `npm start`. E
 TMDB returns 20 movies per page. The brief requires 9 per page across 45 movies (5 pages). Each app page maps to a slice of TMDB results, fetching a second TMDB page when the 9-movie window spans a boundary.
 
 ### Caching
-A 5-minute in-memory cache wraps all TMDB calls to avoid hitting rate limits during testing.
+A 5-minute in-memory cache wraps all TMDB calls to avoid hitting rate limits during testing. 
+
+<img width="1365" height="673" alt="Screenshot 2026-03-08 173958" src="https://github.com/user-attachments/assets/f370b6cc-58e9-4f2e-9f9d-b3954423427d" />
+<img width="1365" height="609" alt="Screenshot 2026-03-08 173932" src="https://github.com/user-attachments/assets/82c04c62-f0ec-443a-9a80-e6435fc19137" />
+<img width="1318" height="670" alt="Screenshot 2026-03-08 173849" src="https://github.com/user-attachments/assets/1c3597df-f611-4ab6-b6a3-d7e20ab5363b" />
+<img width="1357" height="684" alt="Screenshot 2026-03-08 173830" src="https://github.com/user-attachments/assets/8353b59b-ee57-432b-8c4c-638ef98fb444" />
 
 
 
