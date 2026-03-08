@@ -60,10 +60,10 @@ Password: @TeamAglet
 
 
 ### 1. Clone the repository
-```
+
 git clone https://github.com/LethuM2197/aglet-Movies.git
 cd aglet-Movies
-```
+
 
 ### 2. Install dependencies
 
@@ -215,6 +215,7 @@ Responsive design improvements
 
 ### Contact
 <img width="1365" height="673" alt="Contact Me" src="https://github.com/user-attachments/assets/537012f2-03b6-43ae-b549-be7bc296ed06" />
+
 
 
 
