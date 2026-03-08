@@ -167,14 +167,13 @@ aglet-Movies/
 | DELETE | `/favourites/remove/:id` | Yes | Remove a favourite |
 | GET | `/contact` | No | Contact page |
 
----
 
 ## 🗄 Database Dump
 
 A `db-dump/` folder is included with the seeded database.
 
 To restore manually:
-```
+
 node -e "
 require('dotenv').config();
 const mongoose = require('mongoose');
@@ -187,9 +186,9 @@ mongoose.connect(process.env.MONGO_URI).then(async () => {
   process.exit();
 });
 "
-```
 
----
+
+
 
 ##  Rationale & Approach
 
@@ -207,5 +206,6 @@ TMDB returns 20 movies per page. The brief requires 9 per page across 45 movies 
 
 ### Caching
 A 5-minute in-memory cache wraps all TMDB calls to avoid hitting rate limits during testing.
+
 
 
