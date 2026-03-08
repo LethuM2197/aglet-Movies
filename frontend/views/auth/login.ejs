@@ -1,0 +1,166 @@
+<div class="auth-page">
+  <div class="auth-card">
+
+    <a href="/" class="auth-card__logo">▶ MOVIEDB</a>
+
+    <h1 class="auth-card__title" id="authTitle">Welcome back</h1>
+    <p class="auth-card__sub" id="authSub">Sign in to access your favourites</p>
+
+    <% if (error) { %>
+      <div class="auth-card__error"><%= error %></div>
+    <% } %>
+
+    <div id="msgBox" class="auth-card__error" style="display:none;"></div>
+
+    <div class="auth-card__body">
+
+      <div class="form-group">
+        <label class="form-label" id="usernameLabel">Username or Email</label>
+        <input
+          type="text"
+          id="usernameInput"
+          class="form-input"
+          placeholder="jointheteam"
+          autocomplete="username"
+        />
+      </div>
+
+      <div class="form-group" id="emailGroup" style="display:none;">
+        <label class="form-label">Email</label>
+        <input
+          type="email"
+          id="emailInput"
+          class="form-input"
+          placeholder="you@example.com"
+          autocomplete="email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input
+          type="password"
+          id="passwordInput"
+          class="form-input"
+          placeholder="••••••••"
+          autocomplete="current-password"
+        />
+      </div>
+
+      <input type="hidden" id="redirectInput" value="<%= redirect %>" />
+
+      <button type="button" class="btn btn--primary btn--full" id="authBtn">
+        Sign In
+      </button>
+
+    </div>
+
+    <div class="auth-card__footer">
+      <p>
+        <span id="toggleText">Don't have an account?</span>
+        <a href="#" id="toggleLink"> Sign Up</a>
+      </p>
+      <p style="margin-top:10px;">
+        Test credentials: <strong>jointheteam</strong> / <strong>@TeamAglet</strong>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  let isLogin = true;
+
+  const authTitle     = document.getElementById('authTitle');
+  const authSub       = document.getElementById('authSub');
+  const authBtn       = document.getElementById('authBtn');
+  const emailGroup    = document.getElementById('emailGroup');
+  const usernameLabel = document.getElementById('usernameLabel');
+  const toggleText    = document.getElementById('toggleText');
+  const toggleLink    = document.getElementById('toggleLink');
+  const msgBox        = document.getElementById('msgBox');
+
+  // Toggle between Login and Sign Up
+  toggleLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    isLogin = !isLogin;
+
+    if (isLogin) {
+      authTitle.textContent     = 'Welcome back';
+      authSub.textContent       = 'Sign in to access your favourites';
+      authBtn.textContent       = 'Sign In';
+      toggleText.textContent    = "Don't have an account?";
+      toggleLink.textContent    = ' Sign Up';
+      emailGroup.style.display  = 'none';
+      usernameLabel.textContent = 'Username or Email';
+    } else {
+      authTitle.textContent     = 'Join MovieDB';
+      authSub.textContent       = 'Create an account to save your favourites';
+      authBtn.textContent       = 'Sign Up';
+      toggleText.textContent    = 'Already have an account?';
+      toggleLink.textContent    = ' Login';
+      emailGroup.style.display  = 'block';
+      usernameLabel.textContent = 'Username';
+    }
+
+    msgBox.style.display = 'none';
+  });
+
+  // Submit Login or Signup
+  async function submitAuth() {
+    const username = document.getElementById('usernameInput').value.trim();
+    const emailEl  = document.getElementById('emailInput');
+    const email    = emailEl ? emailEl.value.trim() : '';
+    const password = document.getElementById('passwordInput').value;
+    const redirect = document.getElementById('redirectInput').value;
+
+    msgBox.style.display = 'none';
+
+    // Validation
+    if (!username) { showMsg('Please enter your username or email.'); return; }
+    if (!password) { showMsg('Please enter your password.'); return; }
+    if (!isLogin && !email) { showMsg('Please enter your email.'); return; }
+    if (!isLogin && password.length < 6) { showMsg('Password must be at least 6 characters.'); return; }
+
+    authBtn.textContent = isLogin ? 'Signing in...' : 'Signing up...';
+    authBtn.disabled    = true;
+
+    try {
+      const endpoint = isLogin ? '/auth/login' : '/auth/signup';
+      const body     = isLogin
+        ? { login: username, password, redirect }
+        : { username, email, password, redirect };
+
+      const res = await fetch(endpoint, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(body)
+      });
+
+      if (res.redirected) {
+        window.location.href = res.url;
+        return;
+      }
+
+      const html = await res.text();
+      document.open();
+      document.write(html);
+      document.close();
+
+    } catch (err) {
+      showMsg('Something went wrong. Please try again.');
+      authBtn.textContent = isLogin ? 'Sign In' : 'Sign Up';
+      authBtn.disabled    = false;
+    }
+  }
+
+  function showMsg(msg) {
+    msgBox.textContent   = msg;
+    msgBox.style.display = 'block';
+  }
+
+  authBtn.addEventListener('click', submitAuth);
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') submitAuth();
+  });
+</script>

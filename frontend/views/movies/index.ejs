@@ -1,0 +1,88 @@
+<div class="page-hero">
+  <div class="page-hero__inner">
+    <p class="page-hero__label">Now Streaming</p>
+    <h1 class="page-hero__title">Popular <em>Films</em></h1>
+    <p class="page-hero__sub">Page <%= currentPage %> of <%= totalPages %> · 45 films total</p>
+  </div>
+</div>
+
+<section class="movies-section">
+  <div class="movies-grid">
+    <% movies.forEach(movie => { %>
+      <article class="movie-card" data-id="<%= movie.id %>">
+
+        <div class="movie-card__poster">
+          <% if (movie.poster_path) { %>
+            <img
+              src="<%= imageBase %><%= movie.poster_path %>"
+              alt="<%= movie.title %>"
+              class="movie-card__img"
+              loading="lazy"
+            />
+          <% } else { %>
+            <div class="movie-card__no-poster"><span>No Image</span></div>
+          <% } %>
+
+          <div class="movie-card__overlay">
+            <button class="movie-card__info-btn" data-movie-id="<%= movie.id %>">
+              More Info
+            </button>
+          </div>
+
+          <% if (movie.vote_average) { %>
+            <div class="movie-card__rating">★ <%= movie.vote_average.toFixed(1) %></div>
+          <% } %>
+        </div>
+
+        <div class="movie-card__body">
+          <h3 class="movie-card__title"><%= movie.title %></h3>
+          <p class="movie-card__date">
+            <% if (movie.release_date) { %>
+              <%= new Date(movie.release_date).toLocaleDateString('en-ZA', { year: 'numeric', month: 'short', day: 'numeric' }) %>
+            <% } else { %>
+              TBA
+            <% } %>
+          </p>
+
+          <% if (user) { %>
+            <button
+              class="movie-card__fav-btn <%= favouriteIds.includes(movie.id) ? 'is-faved' : '' %>"
+              data-movie-id="<%= movie.id %>"
+              data-title="<%= movie.title.replace(/'/g, '&#39;') %>"
+              data-poster="<%= movie.poster_path || '' %>"
+              data-release="<%= movie.release_date || '' %>"
+              data-overview="<%= (movie.overview || '').replace(/'/g, '&#39;').substring(0, 200) %>"
+              data-rating="<%= movie.vote_average || 0 %>"
+            >
+              <%= favouriteIds.includes(movie.id) ? '♥ Saved' : '♡ Favourite' %>
+            </button>
+          <% } else { %>
+            <a href="/auth/login" class="movie-card__fav-btn movie-card__fav-btn--guest">
+              ♡ Login to Save
+            </a>
+          <% } %>
+        </div>
+
+      </article>
+    <% }); %>
+  </div>
+
+  <!-- Pagination -->
+  <nav class="pagination" aria-label="Movie pages">
+    <% if (currentPage > 1) { %>
+      <a href="/?page=<%= currentPage - 1 %>" class="pagination__btn">← Prev</a>
+    <% } %>
+
+    <div class="pagination__pages">
+      <% for (let i = 1; i <= totalPages; i++) { %>
+        <a href="/?page=<%= i %>" class="pagination__page <%= i === currentPage ? 'is-active' : '' %>">
+          <%= i %>
+        </a>
+      <% } %>
+    </div>
+
+    <% if (currentPage < totalPages) { %>
+      <a href="/?page=<%= currentPage + 1 %>" class="pagination__btn">Next →</a>
+    <% } %>
+  </nav>
+</section>

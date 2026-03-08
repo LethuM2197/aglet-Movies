@@ -1,0 +1,59 @@
+<div class="page-hero page-hero--dark">
+  <div class="page-hero__inner">
+    <p class="page-hero__label">Your Collection</p>
+    <h1 class="page-hero__title">My <em>Favourites</em></h1>
+    <p class="page-hero__sub">Logged in as @<%= user.username %></p>
+  </div>
+</div>
+
+<section class="movies-section">
+  <% if (favourites.length === 0) { %>
+    <div class="empty-state">
+      <div class="empty-state__icon">♡</div>
+      <h2 class="empty-state__title">No favourites yet</h2>
+      <p class="empty-state__sub">Head back to the film list and start saving movies you love.</p>
+      <a href="/" class="btn btn--primary">Browse Films</a>
+    </div>
+  <% } else { %>
+    <div class="movies-grid">
+      <% favourites.forEach(fav => { %>
+        <article class="movie-card" data-id="<%= fav.movieId %>">
+
+          <div class="movie-card__poster">
+            <% if (fav.posterPath) { %>
+              <img
+                src="<%= imageBase %><%= fav.posterPath %>"
+                alt="<%= fav.title %>"
+                class="movie-card__img"
+                loading="lazy"
+              />
+            <% } else { %>
+              <div class="movie-card__no-poster"><span>No Image</span></div>
+            <% } %>
+
+            <div class="movie-card__overlay">
+              <button class="movie-card__info-btn" data-movie-id="<%= fav.movieId %>">More Info</button>
+            </div>
+
+            <% if (fav.voteAverage) { %>
+              <div class="movie-card__rating">★ <%= fav.voteAverage.toFixed(1) %></div>
+            <% } %>
+          </div>
+
+          <div class="movie-card__body">
+            <h3 class="movie-card__title"><%= fav.title %></h3>
+            <p class="movie-card__date">
+              <% if (fav.releaseDate) { %>
+                <%= new Date(fav.releaseDate).toLocaleDateString('en-ZA', { year: 'numeric', month: 'short', day: 'numeric' }) %>
+              <% } %>
+            </p>
+            <button class="movie-card__fav-btn is-faved" data-remove-id="<%= fav.movieId %>">
+              ♥ Remove
+            </button>
+          </div>
+
+        </article>
+      <% }); %>
+    </div>
+  <% } %>
+</section>

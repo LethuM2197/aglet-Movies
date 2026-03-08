@@ -1,0 +1,41 @@
+[
+  {
+    "_id": "69ad878c6a35643d70cde7d3",
+    "movieId": 1265609,
+    "userId": "69ad86f443a9f38297d4ec05",
+    "__v": 0,
+    "createdAt": "2026-03-08T14:28:28.842Z",
+    "overview": "On one last grueling mission during Army Ranger training, a combat engineer must lead his unit in a fight against a giant otherworldly killing machine.",
+    "posterPath": "/rFhKkXhk7ClU03jQ5rHIApJDwev.jpg",
+    "releaseDate": "2026-02-12",
+    "title": "War Machine",
+    "updatedAt": "2026-03-08T14:28:28.842Z",
+    "voteAverage": 6.859
+  },
+  {
+    "_id": "69ad878f6a35643d70cde7d4",
+    "movieId": 680493,
+    "userId": "69ad86f443a9f38297d4ec05",
+    "__v": 0,
+    "createdAt": "2026-03-08T14:28:31.884Z",
+    "overview": "When James receives a mysterious letter from his lost love Mary, he is drawn to Silent Hill—a once-familiar town now consumed by darkness. As he searches for her, James faces monstrous creatures and u",
+    "posterPath": "/fqAGFN2K2kDL0EHxvJaXzaMUkkt.jpg",
+    "releaseDate": "2026-01-21",
+    "title": "Return to Silent Hill",
+    "updatedAt": "2026-03-08T14:28:31.884Z",
+    "voteAverage": 5
+  },
+  {
+    "_id": "69ad879e6a35643d70cde7d5",
+    "userId": "69ad86f443a9f38297d4ec05",
+    "movieId": 1084242,
+    "__v": 0,
+    "createdAt": "2026-03-08T14:28:46.302Z",
+    "overview": "After cracking the biggest case in Zootopia&#39;s history, rookie cops Judy Hopps and Nick Wilde find themselves on the twisting trail of a great mystery when Gary De&#39;Snake arrives and turns the a",
+    "posterPath": "/oJ7g2CifqpStmoYQyaLQgEU32qO.jpg",
+    "releaseDate": "2025-11-26",
+    "title": "Zootopia 2",
+    "updatedAt": "2026-03-08T14:28:46.302Z",
+    "voteAverage": 7.6
+  }
+]
