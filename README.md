@@ -190,17 +190,6 @@ The frontend was designed to remain simple and functional while focusing on the 
 
 Future Improvements (Brownie Points)
 
-Possible enhancements include:
-
-Movie search functionality
-
-Autocomplete search suggestions
-
-Movie detail popup modal
-
-Improved UI styling
-
-Responsive design improvements
 
 
 
